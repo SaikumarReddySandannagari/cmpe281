@@ -1,0 +1,190 @@
+<html>
+<head> 
+  <title> AG Machine Cloud </title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Hind&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"
+  type="text/javascript" charset="utf-8"></script>
+  <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
+  type="text/javascript" charset="utf-8"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/series-label.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+
+<style>
+#container {
+                min-width: 0px;
+                max-width: 650px;
+                height: 300px;
+
+            }
+            #container1 {
+                min-width: 0px;
+                max-width: 650px;
+                height: 300px;
+
+            }
+</style>
+  
+</head>      
+<body>
+    <div style="background-color: #141b2e; width: 100%; height: 90px;">
+        <div style="width: 7%; height: 70px; border-radius: 50%; background-image: url(http://www.mxmexhibitions.com/agrotecno/img/Buildafro.png); margin-left: 2%; position: absolute; top: 10; background-size: 85%; background-position:center; background-position-x: 10; float: left;"></div>
+        <h1 style="color: cornsilk; position: absolute; top: 10; font-size: 350%; padding-left: 10%;">AG MACHINE CLOUD</h1>
+        <div style="width: 30%; padding-left: 91%; padding-top: 1%;">
+        <a href="/fhome" style="color: whitesmoke; font-size: 200%;">Home</a>
+        </div>
+    </div>
+    <div style="height: 670px; width: 98%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin-top: 1%; margin-left: 1%;">
+    <h1 style="text-align: center;"> Farmers Dashboard</h1>
+    <div class="row">
+        <div class="col-6">
+    <div style="width: 100%; height: 600px" id="mapContainer"></div>
+    <script>
+      // Initialize the platform object:
+      var platform = new H.service.Platform({
+      'apikey': 'kuk0ha2gURvs0hDmHBkDm05RAnzTi4GnPiR_d_sJYuE'
+      });
+  
+      // Obtain the default map types from the platform object
+      var maptypes = platform.createDefaultLayers();
+  
+      // Instantiate (and display) a map object:
+      var map = new H.Map(
+      document.getElementById('mapContainer'),
+      maptypes.vector.normal.map,
+      {
+        zoom: 10,
+        center: { lng: -121.8863, lat: 37.3382 }
+      });
+     
+      var animatedSvg =
+    '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" ' + 
+    'y="0px" style="margin:-112px 0 0 -32px" width="86px"' + 
+    'height="100px" viewBox="0 0 136 150">' +
+    'cx="32" cy="128" rx="36" ry="4"><animate attributeName="opacity" from=".2" to=".2"  begin="0s" ' +
+    ' dur="1.5s" values=".1;.7;.1" keySplines=" .6.0 .8 .0; .0 .8 .0 1" ' +
+    'keyTimes=" 0;0.4;1" calcMode="spline" ' +
+    '"/></ellipse><ellipse fill="#1b468d" ' +
+    'cx="26" cy="20" rx="16" ry="12"><animate attributeName="cy" ' +
+    'from="20" to="20" begin="0s" dur="1.5s" values="20;112;20" ' +
+    'keySplines=".6 .1 .8 .1; .1 .8 .1 1" keyTimes=" 0;0.4;1" ' +
+    'calcMode="spline" "/> ' +
+    '<animate attributeName="ry" from="16" to="16" begin="0s" ' + 
+    'dur="1.5s" values="16;12;16" keySplines=".6 .0 .8 .0; .0 .8 .0 1" ' +
+    'keyTimes="0;0.4;1" calcMode="spline" ' +
+    '/></ellipse></svg>';
+  
+  // Create an icon object, an object with geographic coordinates and a marker:
+  
+  var icon = new H.map.DomIcon(animatedSvg),
+    coords1 = {lng: -121.8863, lat: 37.3382},
+    marker1 = new H.map.DomMarker(coords1, {icon: icon});
+    coords2 = {lng: -121.8863, lat: 37.3300},
+    marker2 = new H.map.DomMarker(coords2, {icon: icon});
+  map.addObject(marker1);
+  map.addObject(marker2);
+  coords = {lng: -121.8863, lat:37.3382}
+  map.setCenter(coords);
+  map.setZoom(15);
+  
+  // Set map center and zoom, add the marker to the map:
+
+  
+  
+     
+    </script>
+    </div>
+    <div class="col-6">
+            <div id="container"></div>
+            <div id="container1"></div>
+    </div>
+
+
+</div>
+</div>
+</body>
+<script>
+Highcharts.chart('container', {
+
+title: {
+    text: 'TRACKING OF WEATHER SENSOR'
+},
+
+xAxis: {
+        categories: ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat', 'Sun']
+    },
+    yAxis: {
+        title: {
+            text: 'Temperature (°C)'
+        }
+    },
+
+series: [{
+    name: 'Temperature',
+    data: [55, 57,53, 57, 0, 54, 60]
+}],
+
+responsive: {
+    rules: [{
+        condition: {
+            maxWidth: 500
+        },
+        chartOptions: {
+            legend: {
+                layout: 'horizontal',
+                align: 'center',
+                verticalAlign: 'bottom'
+            }
+        }
+    }]
+}
+
+});
+
+Highcharts.chart('container1', {
+
+title: {
+    text: 'TRACKING OF FUEL SENSOR'
+},
+
+xAxis: {
+        categories: ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat', 'Sun']
+    },
+    yAxis: {
+        title: {
+            text: 'Distance (Miles)'
+        }
+    },
+
+series: [{
+    name: 'Miles',
+    data: [200,185,165, 145, 0, 200, 185]
+}],
+
+responsive: {
+    rules: [{
+        condition: {
+            maxWidth: 500
+        },
+        chartOptions: {
+            legend: {
+                layout: 'horizontal',
+                align: 'center',
+                verticalAlign: 'bottom'
+            }
+        }
+    }]
+}
+
+});
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+</html>
+    
